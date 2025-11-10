@@ -1,0 +1,11 @@
+[package]
+name = "lumine-http"
+version = "0.1.0"
+edition = "2024"
+description = "HTTP utilities for the Lumine libraries"
+license = "MIT"
+repository = "https://github.com/lararust/lumine"
+
+[dependencies]
+serde = "1.0"
+lumine-support = { path = "../support" }

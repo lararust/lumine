@@ -1,0 +1,11 @@
+[package]
+name = "lumine-database"
+version = "0.1.0"
+edition = "2024"
+description = "Database utilities for the Lumine libraries"
+license = "MIT"
+repository = "https://github.com/lararust/lumine"
+
+[dependencies]
+serde = "1.0"
+lumine-support = { path = "../support" }

@@ -1,0 +1,28 @@
+[package]
+name = "lumine"
+version = "0.1.0"
+edition = "2024"
+description = "Unified facade for all Lumine crates — modular libraries powering the Lararust framework"
+license = "MIT"
+repository = "https://github.com/lararust/lumine"
+readme = "README.md"
+authors = ["Vinicius Rech de Camargo <vinicius.rech.dev@gmail.com>"]
+categories = ["web-programming", "framework", "utilities"]
+keywords = ["rust", "framework", "lararust", "lumine"]
+
+[dependencies]
+lumine-support = { path = "./support" }
+lumine-http = { path = "./http" }
+lumine-cli = { path = "./cli" }
+lumine-database = { path = "./database" }
+
+# external dependencies
+serde = { version = "1.0", features = ["derive"] }
+
+[workspace]
+members = [
+    "http",
+    "support",
+    "cli",
+    "database"
+]

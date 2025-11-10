@@ -1,0 +1,10 @@
+[package]
+name = "lumine-support"
+version = "0.1.0"
+edition = "2024"
+description = "HTTP layer for Lararust framework"
+license = "MIT"
+repository = "https://github.com/lararust/lararust-libs"
+
+[dependencies]
+serde = "1.0"

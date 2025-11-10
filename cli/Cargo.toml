@@ -1,0 +1,11 @@
+[package]
+name = "lumine-cli"
+version = "0.1.0"
+edition = "2024"
+description = "HTTP layer for Lararust framework"
+license = "MIT"
+repository = "https://github.com/lararust/lumine"
+
+[dependencies]
+lumine-support = { path = "../support" }
+serde = "1.0"
