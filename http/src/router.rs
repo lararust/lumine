@@ -1,6 +1,6 @@
 use std::sync::Arc;
 
-use crate::http::{
+use crate::{
     requests::{Method, Request},
     response::Response,
 };
@@ -56,11 +56,8 @@ impl Router {
      * Returns `&mut Self` to enable method chaining.
      */
     pub fn add_route(&mut self, method: Method, path: &str, handler: Handler) -> &mut Self {
-        self.routes.push(Route {
-            method,
-            path: path.to_string(),
-            handler,
-        });
+        self.routes
+            .push(Route { method, path: path.to_string(), handler });
         self
     }
 

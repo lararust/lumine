@@ -11,9 +11,10 @@ use std::net::{TcpListener, TcpStream};
 use std::sync::Arc;
 use std::thread;
 
-use crate::http::requests::Request;
-use crate::http::response::Response;
-use crate::prelude::Router;
+use crate::requests::Method;
+use crate::requests::Request;
+use crate::response::Response;
+use crate::router::Router;
 
 /**
  * HTTP server that binds to a TCP address and dispatches requests to a Router.
@@ -114,7 +115,7 @@ fn handle_client(mut stream: TcpStream, router: Arc<Router>) {
             let raw = String::from_utf8_lossy(&buffer[..bytes_read]);
 
             if let Some(request) = Request::from_raw(&raw) {
-                let is_head = request.method == crate::http::requests::Method::HEAD;
+                let is_head = request.method == Method::HEAD;
                 let response = router.dispatch(request);
 
                 // For HEAD requests, send headers only (no body)

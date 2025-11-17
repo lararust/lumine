@@ -47,10 +47,7 @@ impl Response {
 
         let body_bytes = body.into();
 
-        headers.insert(
-            "Content-Type".to_string(),
-            "text/plain; charset=utf-8".to_string(),
-        );
+        headers.insert("Content-Type".to_string(), "text/plain; charset=utf-8".to_string());
         headers.insert("Connection".to_string(), "close".to_string());
         headers.insert("Content-Length".to_string(), body_bytes.len().to_string());
 
@@ -104,7 +101,8 @@ impl Response {
      * ```
      */
     pub fn with_header(mut self, key: &str, value: &str) -> Self {
-        self.headers.insert(key.to_string(), value.to_string());
+        self.headers
+            .insert(key.to_string(), value.to_string());
         self
     }
 

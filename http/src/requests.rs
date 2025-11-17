@@ -57,7 +57,10 @@ impl Request {
             }
         }
 
-        let body = lines.collect::<Vec<&str>>().join("\n").into_bytes();
+        let body = lines
+            .collect::<Vec<&str>>()
+            .join("\n")
+            .into_bytes();
 
         Some(Self { method, path, body })
     }
